@@ -1,53 +1,53 @@
-// import { convert as convertWeightModul } from "./convertWeightModul.js";
+import { convert as convertWeight } from "./convertWeightModul.js";
+import { convert as convertLength } from "./lengthModule.js";
+import { convert as convertTemp } from "./convertTemperature.js";
 
-// const input = document.getElementById("weightInput");
-// const button = document.getElementById("convertBtn");
-// const result = document.getElementById("result");
+const tempInput  = document.getElementById("tempInput");
+const tempButton = document.getElementById("tempconvertBtn");
+const tempResult = document.getElementById("tempresult");
 
-// button.addEventListener("click", () => {
-//   const value = parseFloat(input.value);
-//   if (isNaN(value)) {
-//     result.textContent = "Skriv in en siffra tack!";
-//     return;
-//   }
-//   const pounds = convertWeightModul(value, "kg", "lbs");
-//   console.log(`${value} kg = ${pounds.toFixed(2)} lbs`);
-//   result.textContent = `${value} kg = ${pounds.toFixed(2)} lbs`;
-// });
-
-
-import { convert as converttemp } from "./temperature.js";
-
-const lengthinput = document.getElementById("tempInput");
-const tempbutton = document.getElementById("convertBtn");
-const tempresult = document.getElementById("result");
-
-tempbutton.addEventListener("click", () => {
-  const value = parseFloat(lengthinput.value);
-  if (isNaN(value)) {
-    result.textContent = "Skriv in en siffra tack!";
+tempButton.addEventListener("click", () => {
+  const value = parseFloat(tempInput.value);
+  if (Number.isNaN(value)) {
+    tempResult.textContent = "Skriv in en siffra tack!";
     return;
   }
-  const fernhit = converttemp(value, "C", "F");
-  console.log(`${value} C = ${fernhit.toFixed(2)} F`);
-  result.textContent = `${value} C = ${fernhit.toFixed(2)} F`;
+  const celsius = Number(convertTemp(value, "F", "C"));
+  console.log(`${value} F = ${celsius.toFixed(2)} C`);
+  tempResult.textContent = `${value} F = ${celsius.toFixed(2)} C`;
 });
 
 
 
-import { convert as convertlength } from "./lengthModule.js";
+const weightInput = document.getElementById("weigthInput");  
+const weightBtn = document.getElementById("convertBtn");     
+const weightResult = document.getElementById("wigthresult");  
 
-const lengthInput = document.getElementById("lengthInput");
-const lengthbutton = document.getElementById("lengthconvertBtn");
-const lengthresult = document.getElementById("lengtresult");
-
-lengthbutton.addEventListener("click", () => {
-  const value = parseFloat(lengthInput.value);
+weightBtn.addEventListener("click", () => {
+  const value = parseFloat(weightInput.value);
   if (isNaN(value)) {
-    lengthresult.textContent = "Skriv in en siffra tack!";
+    weightResult.textContent = "Skriv in en siffra tack!";
     return;
   }
-  const inch = convertlength(value, "C", "F");
-  console.log(`${value} Inch = ${inch.toFixed(2)} CM`);
-  result.textContent = `${value} C = ${inch.toFixed(2)} F`;
+  const pounds = convertWeight(value, "kg", "lbs");
+  console.log(`${value} kg = ${pounds.toFixed(2)} lbs`);
+  weightResult.textContent = `${value} kg = ${pounds.toFixed(2)} lbs`;
+});
+
+
+
+
+const lengthInput = document.getElementById("lengthInput");          
+const lengthButton = document.getElementById("lengthconvertBtn");   
+const lengthResult = document.getElementById("lengthresult");        
+
+lengthButton.addEventListener("click", () => {
+  const value = parseFloat(lengthInput.value);
+  if (isNaN(value)) {
+    lengthResult.textContent = "Skriv in en siffra tack!";
+    return;
+  }
+const cm = Number(convertLength(value, "in", "cm"));
+console.log(`${value} in = ${cm.toFixed(2)} cm`);
+lengthResult.textContent = `${value} in = ${cm.toFixed(2)} cm`;
 });
