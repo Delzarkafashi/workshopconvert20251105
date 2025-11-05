@@ -1,4 +1,4 @@
-export function initilize () {
+export function convert() {
    return { 
         cmToInches (cm) {
             if(typeof cm !== "number") {
