@@ -1,11 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convert & Convert!</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="./app.js" defer></script>
 </head>
 <body>
-    
+  <main class="converter">
+    <h1>Convert & Convert!</h1>
+
+    <label for="weightInput">Vikt (kg):</label>
+    <input id="weightInput" type="text" inputmode="decimal" placeholder="kg">
+
+
+    <button id="convertBtn">Convert</button>
+    <p id="result"></p>
+  </main>
 </body>
 </html>
